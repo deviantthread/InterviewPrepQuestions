@@ -11,7 +11,6 @@ public class Question98 {
         // root.right.left = new TreeNode(15);
         // root.right.right = new TreeNode(27);
         TreeNode.printNodes(root);
-        // System.out.println(Integer.MAX_VALUE);
         System.out.println(new Question98().isValidBST(root));
     }
 
