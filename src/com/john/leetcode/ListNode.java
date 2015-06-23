@@ -13,9 +13,15 @@ public class ListNode {
         return "ListNode [" + val + "]";
     }
 
+    public static ListNode generateNodes(int nodes) {
+        ListNode head = new ListNode(0);
+        generateNodes(head, nodes);
+        return head;
+    }
+
     public static void generateNodes(ListNode head, int nodes) {
         ListNode curr = head;
-        for (int i = head.val + 1; i < head.val + nodes + 1; i++) {
+        for (int i = head.val + 1; i < head.val + nodes; i++) {
             curr.next = new ListNode(i);
             curr = curr.next;
         }
@@ -26,6 +32,12 @@ public class ListNode {
             System.out.print(head.val + "->");
             head = head.next;
         }
-        System.out.println();
+        System.out.println("\n");
     }
+
+    public static void printNodes(ListNode head, String msg) {
+        System.out.println(msg);
+        printNodes(head);
+    }
+
 }
