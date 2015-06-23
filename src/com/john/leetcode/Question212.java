@@ -1,10 +1,8 @@
 package com.john.leetcode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public class Question212 {
@@ -32,7 +30,7 @@ public class Question212 {
     }
 
     public List<String> findWords(char[][] board, String[] words) {
-        Node root = createTrie(words);
+        TrieNode root = TrieNode.createTrie(words);
         Set<String> foundWords = new HashSet<String>();
 
         boolean[][] visited = new boolean[board.length][];
@@ -43,8 +41,7 @@ public class Question212 {
         StringBuilder sb = new StringBuilder();
         for (int row = 0; row < board.length; row++) {
             for (int col = 0; col < board[row].length; col++) {
-                if (root.children.containsKey(board[row][col])) {
-
+                if (root.getChildren().containsKey(board[row][col])) {
                     dfs(board, row, col, visited, root, foundWords, sb);
                 }
             }
@@ -54,7 +51,7 @@ public class Question212 {
     }
 
     private void dfs(char[][] board, int row, int col, boolean[][] visited,
-            Node node, Set<String> foundWords, StringBuilder wordSoFar)
+            TrieNode node, Set<String> foundWords, StringBuilder wordSoFar)
     {
         if (row < 0 || row == board.length || col < 0 || col == board[row].length) {
             return;
@@ -63,15 +60,15 @@ public class Question212 {
         }
 
         // i'm not making progress on my word, quit
-        if (!node.children.containsKey(board[row][col])) {
+        if (!node.getChildren().containsKey(board[row][col])) {
             return;
         }
 
         visited[row][col] = true;
         wordSoFar.append(board[row][col]);
 
-        Node child = node.children.get(board[row][col]);
-        if (child.isEnd) {
+        TrieNode child = node.getChildren().get(board[row][col]);
+        if (child.isEnd()) {
             foundWords.add(wordSoFar.toString());
         }
 
@@ -86,34 +83,4 @@ public class Question212 {
         return;
     }
 
-    private Node createTrie(String[] words) {
-        Node root = new Node();
-        for (String word : words) {
-            addWordToTrie(root, word.toCharArray(), 0);
-        }
-
-        return root;
-    }
-
-    private void addWordToTrie(Node node, char[] charArray, int i) {
-        if (i >= charArray.length) {
-            node.isEnd = true;
-            return;
-        }
-
-        Node child;
-        if (!node.children.containsKey(charArray[i])) {
-            child = new Node();
-            node.children.put(charArray[i], child);
-        } else {
-            child = node.children.get(charArray[i]);
-        }
-
-        addWordToTrie(child, charArray, i + 1);
-    }
-
-    private class Node {
-        public Map<Character, Node> children = new HashMap<Character, Node>();
-        public boolean isEnd = false;
-    }
 }
