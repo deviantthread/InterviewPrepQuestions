@@ -1,6 +1,6 @@
-package com.john.animalshelter;
+package com.john.crackingcodeinterview.animalshelter;
 
 public enum AnimalType {
-    CAT,
-    DOG;
+	CAT,
+	DOG;
 }

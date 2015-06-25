@@ -1,4 +1,4 @@
-package com.john.animalshelter;
+package com.john.crackingcodeinterview.animalshelter;
 
 public class AnimalEntry {
     private final Animal animal;
