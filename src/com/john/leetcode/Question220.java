@@ -4,7 +4,7 @@ public class Question220 {
 
 	public static void main(String[] args) {
 		int[] nums = { 2, 5, 8, 11, 7, 1 };
-		int k = 5;
+		int k = 4;
 		int t = 2;
 		System.out.println(new Question220().containsNearbyAlmostDuplicate(
 				nums, k, t));
