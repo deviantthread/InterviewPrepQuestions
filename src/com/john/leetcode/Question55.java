@@ -9,6 +9,18 @@ public class Question55 {
     }
 
     public boolean canJump(int[] nums) {
+        boolean hasZero = false;
+        for (int num : nums) {
+            if (num == 0) {
+                hasZero = true;
+                break;
+            }
+        }
+
+        if (!hasZero) {
+            return true;
+        }
+
         return canJump(nums, 0);
     }
 
@@ -19,9 +31,8 @@ public class Question55 {
 
         int jump = nums[i];
         while (jump > 0) {
-            boolean success = canJump(nums, i + jump);
-            if (success) {
-                return success;
+            if (canJump(nums, i + jump)) {
+                return true;
             }
             jump--;
         }
