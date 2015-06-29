@@ -27,6 +27,20 @@ public class ListNode {
         }
     }
 
+    // 1->4->3->2->5->2
+    public static ListNode generateNodes(String list) {
+        ListNode head = new ListNode(-1);
+        ListNode curr = head;
+        for (char c : list.toCharArray()) {
+            if (Character.isDigit(c)) {
+                curr.next = new ListNode(Integer.parseInt(String.valueOf(c)));
+                curr = curr.next;
+            }
+        }
+
+        return head.next;
+    }
+
     public static void printNodes(ListNode head) {
         while (head != null) {
             System.out.print(head.val + "->");
