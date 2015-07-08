@@ -44,7 +44,7 @@ public class Question134 {
                 currGas -= gas[start];
                 currGas += cost[start];
                 start++;
-                // my start has caught up to my end, but we're not at a stopping condition. try to find a new start
+                // start has caught up to end, but we're not at a stopping condition. try to find a new start
                 if (start == end) {
                     while (gas[start] < cost[start]) {
                         start++;
