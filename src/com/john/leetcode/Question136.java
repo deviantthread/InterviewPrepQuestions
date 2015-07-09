@@ -10,7 +10,18 @@ public class Question136 {
 		int[] nums = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10,
 				10 };
 		int singleNumber = new Question136().singleNumber(nums);
+		int singleNumberXor = new Question136().singleNumberXOR(nums);
 		System.out.println(singleNumber);
+		System.out.println(singleNumberXor);
+	}
+
+	private int singleNumberXOR(int[] nums) {
+		int ret = 0;
+		for(int num : nums){
+			ret = ret ^ num;
+		}
+		
+		return ret;
 	}
 
 	public int singleNumber(int[] nums) {

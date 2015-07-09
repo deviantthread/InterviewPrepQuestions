@@ -104,13 +104,13 @@ public class TreeNode {
 
 	public static TreeNode generateTree(int i) {
 		// TODO: implement for real
-		TreeNode root = new TreeNode(10);
+		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(5);
-		root.right = new TreeNode(20);
+		root.right = new TreeNode(2);
 		root.left.left = new TreeNode(1);
 		root.left.right = new TreeNode(7);
-		root.right.left = new TreeNode(15);
-		root.right.right = new TreeNode(30);
+		root.right.left = new TreeNode(1);
+		root.right.right = new TreeNode(3);
 
 		return root;
 	}
