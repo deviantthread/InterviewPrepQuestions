@@ -36,13 +36,4 @@ public class Question206 {
 
         return prev;
     }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode(int x) {
-            val = x;
-        }
-    }
 }
