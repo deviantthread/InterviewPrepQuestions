@@ -13,6 +13,14 @@ public class ListNode {
 		return "ListNode [" + val + "]";
 	}
 
+	public void print() {
+		printNodes(this);
+	}
+
+	public void print(String msg) {
+		printNodes(this, msg);
+	}
+
 	public static ListNode generateNodes(int nodes) {
 		ListNode head = new ListNode(0);
 		generateNodes(head, nodes);
@@ -65,5 +73,4 @@ public class ListNode {
 		System.out.println(msg);
 		printNodes(head);
 	}
-
 }
