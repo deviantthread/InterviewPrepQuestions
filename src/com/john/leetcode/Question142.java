@@ -41,15 +41,4 @@ public class Question142 {
 
         return null;
     }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
 }
