@@ -3,7 +3,7 @@ package com.john.leetcode;
 public class Question148 {
 
 	public static void main(String[] args) {
-		ListNode shuffled = ListNode.generateNodes("135926");
+		ListNode shuffled = ListNode.generateNodes("2177777734");
 		shuffled.print("shuffled");
 		ListNode sorted = new Question148().sortList(shuffled);
 		sorted.print("sorted");
@@ -34,17 +34,14 @@ public class Question148 {
 			return newHead;
 		}
 
-		int halfLen = (len / 2) - 1;
-		ListNode preSecondHalf = findNode(head, halfLen);
+		int halfLen = (len / 2);
+		ListNode preSecondHalf = findNode(head, halfLen - 1);
 		ListNode secondHalf = preSecondHalf.next;
 		preSecondHalf.next = null;
-
 		ListNode sortedFirstHalf = sort(head, halfLen);
-		ListNode sortedSecondHalf = sort(secondHalf, halfLen);
+		ListNode sortedSecondHalf = sort(secondHalf, len - halfLen);
 
-		ListNode newHead = merge(sortedFirstHalf, sortedSecondHalf);
-
-		return newHead;
+		return merge(sortedFirstHalf, sortedSecondHalf);
 	}
 
 	private ListNode merge(ListNode sortedFirstHalf, ListNode sortedSecondHalf) {
@@ -78,7 +75,11 @@ public class Question148 {
 	}
 
 	private int getLen(ListNode head) {
-		// TODO Auto-generated method stub
-		return 0;
+		int count = 0;
+		while (head != null) {
+			count++;
+			head = head.next;
+		}
+		return count;
 	}
 }

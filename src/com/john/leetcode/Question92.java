@@ -3,9 +3,9 @@ package com.john.leetcode;
 public class Question92 {
 
 	public static void main(String[] args) {
-		ListNode head = ListNode.generateNodes("12345");
+		ListNode head = ListNode.generateNodes("123456");
 		head.print();
-		ListNode reversed = new Question92().reverseBetween(head, 1, 4);
+		ListNode reversed = new Question92().reverseBetween(head, 1, 5);
 		reversed.print();
 	}
 
@@ -13,6 +13,7 @@ public class Question92 {
 		if (head == null || head.next == null) {
 			return head;
 		}
+
 		ListNode beforeHead = new ListNode(-1);
 		beforeHead.next = head;
 		ListNode beforeStart = beforeHead;
@@ -31,7 +32,11 @@ public class Question92 {
 		reverse(start);
 		beforeStart.next = end;
 		start.next = secondHalf;
-		return head;// will break if reverse is at the start
+		if (start != head) {
+			return head;
+		} else {
+			return end;
+		}
 	}
 
 	private void reverse(ListNode start) {
