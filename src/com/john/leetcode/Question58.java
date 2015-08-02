@@ -2,27 +2,30 @@ package com.john.leetcode;
 
 public class Question58 {
 
-    public static void main(String[] args) {
-        String s = "hi   ";
-        System.out.println(new Question58().lengthOfLastWord(s));
-    }
+	public static void main(String[] args) {
+		String s = "hi";
+		System.out.println(new Question58().lengthOfLastWord(s));
+	}
 
-    public int lengthOfLastWord(String s) {
-        if (s == null || s.equals("")) {
-            return 0;
-        }
-        int skipped = 0;
-        int i = s.length() - 1;
-        while (s.charAt(i) == ' ') {
-            i--;
-            skipped++;
-        }
+	public int lengthOfLastWord(String s) {
+		if (s == null || s.equals("")) {
+			return 0;
+		} else if (isOnlySpaces(s)) {
+			return 0;
+		}
 
-        for (; i >= 0; i--) {
-            if (s.charAt(i) == ' ') {
-                return s.length() - i - 1 - skipped;
-            }
-        }
-        return s.length() - skipped;
-    }
+		String[] regex = s.split(" ");
+
+		String lastWord = regex[regex.length - 1];
+		return lastWord.length();
+	}
+
+	private boolean isOnlySpaces(String s) {
+		for (char c : s.toCharArray()) {
+			if (c != ' ') {
+				return false;
+			}
+		}
+		return true;
+	}
 }
