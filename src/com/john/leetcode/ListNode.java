@@ -8,6 +8,10 @@ public class ListNode {
 		val = x;
 	}
 
+	public ListNode(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "ListNode [" + val + "]";

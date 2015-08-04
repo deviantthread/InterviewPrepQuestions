@@ -39,8 +39,6 @@ public class Question209 {
 				ret = Math.min(ret, high - low + 1);
 			}
 		}
-		System.out.println("low: " + low);
-		System.out.println("high: " + high);
 		return ret == Integer.MAX_VALUE ? 0 : ret;
 	}
 

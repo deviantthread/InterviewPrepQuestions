@@ -12,6 +12,7 @@ public class TrinaryTree<T extends Comparable<T>> {
 		}
 	}
 
+	// this isn't balanced
 	private void insertRecurse(TreeNode<T> node, T val) {
 		if (node.val.compareTo(val) < 0) {
 			if (node.right != null) {
@@ -31,13 +32,15 @@ public class TrinaryTree<T extends Comparable<T>> {
 	}
 
 	private static class TreeNode<T> {
-		public TreeNode(T val2) {
-			this.val = val2;
+		public TreeNode(T val) {
+			this.val = val;
 		}
 
 		private TreeNode<T> left;
 		private TreeNode<T> right;
 		private T val;
+		// middle count is a bad idea, T could be actual objects that we need to
+		// keep
 		private int middleCount = 0;
 	}
 }

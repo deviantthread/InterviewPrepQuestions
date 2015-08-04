@@ -7,7 +7,7 @@ import java.util.Stack;
 public class Question145 {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.generateTree(10);
+		TreeNode root = TreeNode.generateTree("1|0,");
 		TreeNode.printNodes(root);
 		List<Integer> postorderTraversal = new Question145().postorderTraversal(root);
 		List<Integer> postorderTraversalRec = new Question145().postorderTraversalRecursive(root);

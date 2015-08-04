@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 public class Question230 {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.generateTree(10);
+		TreeNode root = TreeNode.generateTree("1|0,");
 		TreeNode.printNodes(root);
 		int k = 3;
 		System.out.println(new Question230().kthSmallest(root, k));
