@@ -78,14 +78,16 @@ public class TrinaryTreeTest {
 		TrinaryTree tree = new TrinaryTree();
 
 		tree.insert(10);
+		tree.insert(7);
 		tree.insert(5);
+		tree.insert(7);
 		tree.insert(1);
 		tree.insert(7);
-		Assert.assertEquals("1,5,7,10,", tree.toString());
+		Assert.assertEquals("1,5,7,7,7,10,", tree.toString());
 
 		tree.delete(5);
 
-		Assert.assertEquals("1,7,10,", tree.toString());
+		Assert.assertEquals("1,7,7,7,10,", tree.toString());
 	}
 
 	@Test

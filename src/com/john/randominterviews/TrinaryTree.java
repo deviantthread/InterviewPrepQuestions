@@ -34,21 +34,8 @@ public class TrinaryTree {
 	}
 
 	public void delete(int val) {
-		// find node
-		// couldn't find node? its ok! just quit
-		// did find node? well...
-		// does node have a mid? kill one mid element
-		// is node leaf? delete it from parent
-		// does node have one child? link parent to that child, ie replace
-		// parent->node link with parent->child link
-		// does node have two children? now its complicated...
-		// find min value in right subtree.
-		// copy min value to current node, copy mid's to current node.
-		// delete the (now duplicate) min node
-		// also, might need to update root, keep that in mind
-
 		ParentDeleteNodePair pair = findParent(root, val);
-		// val doesn't exist in the tree
+
 		boolean valExistsInTree = pair != null;
 		if (valExistsInTree) {
 			deleteNode(pair, true);
@@ -105,11 +92,7 @@ public class TrinaryTree {
 	}
 
 	private void deleteTwoChildren(ParentDeleteNodePair pair) {
-		// find min in right subtree.
-		// save its val and mid's
-		// call delete on that min val
-		// set pair.nodeToDelete to val and mids
-		ParentDeleteNodePair nextLargestPair = findMin(pair.nodeToDelete);
+		ParentDeleteNodePair nextLargestPair = findNextLargest(pair.nodeToDelete);
 		deleteNode(nextLargestPair, false);
 		Node node = pair.nodeToDelete;
 		Node replacementNode = nextLargestPair.nodeToDelete;
@@ -118,7 +101,7 @@ public class TrinaryTree {
 		node.mid = replacementNode.mid;
 	}
 
-	private ParentDeleteNodePair findMin(Node node) {
+	private ParentDeleteNodePair findNextLargest(Node node) {
 		Node parent = node;
 		Node curr = node.right;
 
