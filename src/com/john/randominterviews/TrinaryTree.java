@@ -59,10 +59,10 @@ public class TrinaryTree {
 		Node node = pair.nodeToDelete;
 		boolean hasRight = node.right != null;
 		boolean hasLeft = node.left != null;
-		boolean isLeaf = !(hasRight && hasLeft);
+		boolean isLeaf = !(hasRight || hasLeft);
 		boolean hasExactlyOneChild = hasRight ^ hasLeft;
 
-		if (node.mid != null) {
+		if (node.mid != null && deleteMidIfPossible) {
 			deleteMid(node);
 		} else if (isLeaf) {
 			deleteNoChild(pair);
@@ -109,17 +109,18 @@ public class TrinaryTree {
 		// save its val and mid's
 		// call delete on that min val
 		// set pair.nodeToDelete to val and mids
-		ParentDeleteNodePair nextLargestPair = findMin(pair.nodeToDelete.right);
+		ParentDeleteNodePair nextLargestPair = findMin(pair.nodeToDelete);
 		deleteNode(nextLargestPair, false);
 		Node node = pair.nodeToDelete;
 		Node replacementNode = nextLargestPair.nodeToDelete;
+
 		node.val = replacementNode.val;
 		node.mid = replacementNode.mid;
 	}
 
 	private ParentDeleteNodePair findMin(Node node) {
-		Node parent = null;
-		Node curr = node;
+		Node parent = node;
+		Node curr = node.right;
 
 		while (curr.left != null) {
 			parent = curr;
