@@ -1,9 +1,11 @@
 package com.john.randominterviews;
 
+// unit test file
+
 import org.junit.Assert;
 import org.junit.Test;
 
-// To run the unit tests at junit and hamcrest
+// To run the unit tests add junit and hamcrest jars to your build path
 // http://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12.jar
 // https://hamcrest.googlecode.com/files/hamcrest-all-1.3.jar
 public class StringToLongTest {
