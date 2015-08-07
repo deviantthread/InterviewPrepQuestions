@@ -1,19 +1,22 @@
 package com.john.randominterviews;
 
+/// source code file
+
 import java.util.regex.Pattern;
 
 public class StringToLong {
 
 	private static final Pattern VALID_INPUT_PATTERN = Pattern.compile("[\\-\\+]?[0-9]+");
 
-	public static void main(String[] args) {
-
-		System.out.println(Long.parseLong(String.valueOf(Long.MIN_VALUE + "0")));
-		String num = String.valueOf("+123");
-		long l = StringToLong.parseLong(num);
-		System.out.println("val: " + l);
-	}
-
+	/**
+	 * Custom implementation of Long#parseLong() see {@link Long#parseLong()}
+	 * 
+	 * @param num
+	 *            The string representation of a long value
+	 * @throws NumberFormatException
+	 *             for invalid input
+	 * @return The long representation of the input string
+	 */
 	public static long parseLong(String num) {
 		validateInput(num);
 		num = stripPlusSignIfNeeded(num);

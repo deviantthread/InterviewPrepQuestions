@@ -1,5 +1,11 @@
 package com.john.randominterviews;
 
+// source file
+
+import com.google.common.annotations.VisibleForTesting;
+
+// add guava to your build path for @VisibleForTesting 
+// http://search.maven.org/remotecontent?filepath=com/google/guava/guava/18.0/guava-18.0.jar
 public class TrinaryTree {
 
 	private Node root;
@@ -133,34 +139,13 @@ public class TrinaryTree {
 
 	}
 
-	// maybe move this out to the test file?
-	// for easy unit testing, to verify the tree is updated correctly
-	@Override
-	public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		treeToSB(root, sb);
-
-		return sb.toString();
+	@VisibleForTesting
+	Node getRoot() {
+		return this.root;
 	}
 
-	private void treeToSB(Node node, StringBuilder sb) {
-		if (node == null) {
-			return;
-		}
-		treeToSB(node.left, sb);
-
-		sb.append(node.val).append(",");
-		Node midNode = node.mid;
-		while (midNode != null) {
-			sb.append(midNode.val).append(",");
-			midNode = midNode.mid;
-		}
-
-		treeToSB(node.right, sb);
-	}
-
-	private static class Node {
+	@VisibleForTesting
+	static class Node {
 		private int val;
 		private Node left = null;
 		private Node right = null;
@@ -169,6 +154,27 @@ public class TrinaryTree {
 		public Node(int val) {
 			this.val = val;
 		}
+
+		@VisibleForTesting
+		int getVal() {
+			return val;
+		}
+
+		@VisibleForTesting
+		Node getLeft() {
+			return left;
+		}
+
+		@VisibleForTesting
+		Node getRight() {
+			return right;
+		}
+
+		@VisibleForTesting
+		Node getMid() {
+			return mid;
+		}
+
 	}
 
 	private static class ParentDeleteNodePair {
@@ -184,5 +190,4 @@ public class TrinaryTree {
 			return parent == null;
 		}
 	}
-
 }
