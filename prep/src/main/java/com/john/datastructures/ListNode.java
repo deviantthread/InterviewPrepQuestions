@@ -1,7 +1,11 @@
 package com.john.datastructures;
 
+import java.util.ArrayList;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RequiredArgsConstructor
 public class ListNode {
     public int val;
@@ -9,15 +13,6 @@ public class ListNode {
 
     public ListNode(int x) {
         val = x;
-    }
-
-    public ListNode(String string) {
-        // TODO Auto-generated constructor stub
-    }
-
-    @Override
-    public String toString() {
-        return "ListNode [" + val + "]";
     }
 
     public void print() {
@@ -54,7 +49,9 @@ public class ListNode {
         return head.next;
     }
 
-    // 1->4->3->2->5->2
+    /**
+     * format is 1->4->3->2->5->2
+     */
     public static ListNode generateNodes(String list) {
         ListNode head = new ListNode(-1);
         ListNode curr = head;
@@ -66,6 +63,21 @@ public class ListNode {
         }
 
         return head.next;
+    }
+
+    public int[] toArray() {
+        return toArray(this);
+    }
+
+    public static int[] toArray(ListNode head) {
+        List<Integer> result = new ArrayList<>();
+
+        while (head != null) {
+            result.add(head.val);
+            head = head.next;
+        }
+
+        return result.stream().mapToInt(i -> i).toArray();
     }
 
     public static void printNodes(ListNode head) {
