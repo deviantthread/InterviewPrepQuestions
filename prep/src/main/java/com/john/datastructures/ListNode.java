@@ -1,9 +1,13 @@
 package com.john.datastructures;
 
+import com.google.common.base.Joiner;
+import com.google.common.base.Splitter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -19,24 +23,6 @@ public class ListNode {
         printNodes(this);
     }
 
-    public void print(String msg) {
-        printNodes(this, msg);
-    }
-
-    public static ListNode generateNodes(int nodes) {
-        ListNode head = new ListNode(0);
-        generateNodes(head, nodes);
-        return head;
-    }
-
-    public static void generateNodes(ListNode head, int nodes) {
-        ListNode curr = head;
-        for (int i = head.val + 1; i < head.val + nodes; i++) {
-            curr.next = new ListNode(i);
-            curr = curr.next;
-        }
-    }
-
     public static ListNode generateNodes(int[] values) {
         ListNode head = new ListNode(-1);
         ListNode curr = head;
@@ -50,18 +36,19 @@ public class ListNode {
     }
 
     /**
-     * format is 1->4->3->2->5->2
+     * format is [1,4,3,2,5,2]
      */
     public static ListNode generateNodes(String list) {
         ListNode head = new ListNode(-1);
         ListNode curr = head;
-        for (char c : list.toCharArray()) {
-            if (Character.isDigit(c)) {
-                curr.next = new ListNode(Integer.parseInt(String.valueOf(c)));
-                curr = curr.next;
-            }
-        }
 
+        String trimmed = StringUtils.removeEnd(StringUtils.removeStart(list, "["), "]");
+        Iterable<String> nums = Splitter.on(",").split(trimmed);
+
+        for (String num : nums) {
+            curr.next = new ListNode(Integer.parseInt(num));
+            curr = curr.next;
+        }
         return head.next;
     }
 
@@ -81,15 +68,51 @@ public class ListNode {
     }
 
     public static void printNodes(ListNode head) {
-        while (head != null) {
-            System.out.print(head.val + "->");
-            head = head.next;
+        if (head == null) {
+            return;
         }
-        System.out.println("\n");
+
+        System.out.println(head.toString());
     }
 
-    public static void printNodes(ListNode head, String msg) {
-        System.out.println(msg);
-        printNodes(head);
+    @Override
+    public String toString() {
+        int[] ints = ListNode.toArray(this);
+
+        String joined = Joiner.on(",").join(Arrays.stream(ints).iterator());
+        return String.format("[%s]", joined);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof ListNode)) {
+            return false;
+        }
+
+        int[] thisVals = this.toArray();
+        int[] objVals = ((ListNode) obj).toArray();
+        if (thisVals.length != objVals.length) {
+            return false;
+        }
+
+        for (int i = 0; i < thisVals.length; i++) {
+            if (thisVals[i] != objVals[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int length() {
+        int len = 0;
+
+        ListNode curr = this;
+
+        while (curr != null) {
+            len++;
+            curr = curr.next;
+        }
+
+        return len;
     }
 }
