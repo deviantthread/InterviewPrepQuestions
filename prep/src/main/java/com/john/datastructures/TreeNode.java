@@ -1,5 +1,6 @@
 package com.john.datastructures;
 
+import com.google.common.base.Splitter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.Queue;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 @NoArgsConstructor
@@ -55,6 +57,22 @@ public class TreeNode {
         }
 
         return root;
+    }
+
+    /**
+     * input: "[1, null, 2, 3]" produces the tree
+     *
+     *    1
+     *     \
+     *      2
+     *     /
+     *    3
+     *
+     */
+    public static TreeNode create(String input) {
+        Iterable<String> nums = Splitter.on(",").split(StringUtils.strip(input, "[]"));
+
+        Integer.parseInt("")
     }
 
     // TODO:
