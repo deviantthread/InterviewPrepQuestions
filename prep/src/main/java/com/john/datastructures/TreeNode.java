@@ -8,6 +8,7 @@ import java.util.Queue;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -70,9 +71,10 @@ public class TreeNode {
      *
      */
     public static TreeNode create(String input) {
-        Iterable<String> nums = Splitter.on(",").split(StringUtils.strip(input, "[]"));
-
-        Integer.parseInt("")
+        throw new NotImplementedException();
+//        Iterable<String> nums = Splitter.on(",").split(StringUtils.strip(input, "[]"));
+//
+//        Integer.parseInt("")
     }
 
     // TODO:
