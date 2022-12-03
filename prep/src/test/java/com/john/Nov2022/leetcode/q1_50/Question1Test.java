@@ -28,7 +28,7 @@ public class Question1Test {
 
     @Test
     public void testTwoSumReusedIndex() {
-        int[] nums = {3, 3};
+        int[] nums = { 3, 3 };
         int target = 6;
 
         testTwoSumBase(nums, target);

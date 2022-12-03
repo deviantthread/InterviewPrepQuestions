@@ -33,12 +33,11 @@ public class Question1 {
         for (int i = 0; i < origs.length; i++) {
             int idx = Arrays.binarySearch(origs, new Orig(target - origs[i].value, -1), comparator);
             if (idx >= 0 && origs[i].origIdx != origs[idx].origIdx) {
-                return new int[] {origs[i].origIdx, origs[idx].origIdx};
+                return new int[] { origs[i].origIdx, origs[idx].origIdx };
             }
         }
         return null;
     }
-
 
     private static class Orig {
         int value;

@@ -77,7 +77,7 @@ public class Question160Test {
             listA = listA.next;
         }
 
-        while(bIdx++ < skipB) {
+        while (bIdx++ < skipB) {
             listB = listB.next;
         }
 

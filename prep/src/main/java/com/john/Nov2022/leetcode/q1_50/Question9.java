@@ -16,10 +16,9 @@ public class Question9 {
         int len = findLength(x);
         int[] digits = new int[len];
 
-
         //backwards
         for (int idx = digits.length - 1; idx >= 0; idx--) {
-            digits[idx] =  x % 10;
+            digits[idx] = x % 10;
             x = x / 10;
         }
 
