@@ -1,7 +1,6 @@
 package com.john.Nov2022.leetcode.q1_50;
 
-import static org.junit.Assert.*;
-
+import com.john.utils.ArrayAssert;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +17,7 @@ public class Question27Test {
         //    Explanation: Your function should return k = 2, with the first two elements of nums being 2.
         //    It does not matter what you leave beyond the returned k (hence they are underscores).
         Assert.assertEquals(expected, classUnderTest.removeElement(nums, val));
-        assertKElementsEqual(nums, expectedNums, expected);
+        ArrayAssert.assertFirstKElementsEqual(nums, expectedNums, expected);
     }
 
     @Test
@@ -31,12 +30,6 @@ public class Question27Test {
         //    Note that the five elements can be returned in any order.
         //    It does not matter what you leave beyond the returned k (hence they are underscores).
         Assert.assertEquals(expected, classUnderTest.removeElement(nums, val));
-        assertKElementsEqual(nums, expectedNums, expected);
-    }
-
-    private void assertKElementsEqual(int[] nums, int[] expectedNums, int k) {
-        for (int i = 0; i < k; i++) {
-            Assert.assertEquals("different at index: " + i, expectedNums[i], nums[i]);
-        }
+        ArrayAssert.assertFirstKElementsEqual(nums, expectedNums, expected);
     }
 }
