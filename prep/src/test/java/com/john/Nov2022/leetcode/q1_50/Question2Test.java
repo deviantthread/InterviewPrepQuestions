@@ -1,7 +1,6 @@
 package com.john.Nov2022.leetcode.q1_50;
 
 import com.john.datastructures.ListNode;
-import org.apache.commons.lang3.NotImplementedException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -63,6 +62,6 @@ public class Question2Test {
             digits[digit--] = Integer.parseInt(strValue.substring(valueIdx, valueIdx + 1));
         }
 
-        return ListNode.generateNodes(digits);
+        return ListNode.create(digits);
     }
 }

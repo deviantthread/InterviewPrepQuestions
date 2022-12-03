@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.ArrayUtils;
@@ -71,10 +74,11 @@ public class TreeNode {
      *
      */
     public static TreeNode create(String input) {
-        throw new NotImplementedException();
-//        Iterable<String> nums = Splitter.on(",").split(StringUtils.strip(input, "[]"));
-//
-//        Integer.parseInt("")
+        List<String> strs = Splitter.on(",").omitEmptyStrings().splitToList(StringUtils.strip(input, "[]"));
+
+        return create(strs.stream()
+            .map(s -> s.equals("null") ? null : Integer.parseInt(s))
+            .toArray(Integer[]::new));
     }
 
     // TODO:
@@ -157,10 +161,9 @@ public class TreeNode {
         return true;
     }
 
-
     //TODO: write this
-//    @Override
-//    public String toString() {
-//
-//    }
+    //    @Override
+    //    public String toString() {
+    //
+    //    }
 }

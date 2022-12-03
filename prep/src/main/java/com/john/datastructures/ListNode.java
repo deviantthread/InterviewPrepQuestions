@@ -23,7 +23,7 @@ public class ListNode {
         printNodes(this);
     }
 
-    public static ListNode generateNodes(int[] values) {
+    public static ListNode create(int[] values) {
         ListNode head = new ListNode(-1);
         ListNode curr = head;
 
@@ -36,9 +36,9 @@ public class ListNode {
     }
 
     /**
-     * format is [1,4,3,2,5,2]
+     * format is "[1,4,3,2,5,2]"
      */
-    public static ListNode generateNodes(String list) {
+    public static ListNode create(String list) {
         ListNode head = new ListNode(-1);
         ListNode curr = head;
 

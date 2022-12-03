@@ -1,8 +1,5 @@
 package com.john.Nov2022.leetcode.q151_200;
 
-import static org.junit.Assert.*;
-
-import com.john.Nov2022.leetcode.q1_50.Question1;
 import com.john.datastructures.ListNode;
 import org.junit.Assert;
 import org.junit.Test;
@@ -15,8 +12,8 @@ public class Question160Test {
     public void testExample1() {
 
         int intersectVal = 8;
-        ListNode listA = ListNode.generateNodes("[4,1,8,4,5]");
-        ListNode listB = ListNode.generateNodes("[5,6,1,8,4,5]");
+        ListNode listA = ListNode.create("[4,1,8,4,5]");
+        ListNode listB = ListNode.create("[5,6,1,8,4,5]");
         int skipA = 2;
         int skipB = 3;
         int expected = 8;
@@ -31,8 +28,8 @@ public class Question160Test {
     public void testExample2() {
 
         int intersectVal = 2;
-        ListNode listA = ListNode.generateNodes("[1,9,1,2,4]");
-        ListNode listB = ListNode.generateNodes("[3,2,4]");
+        ListNode listA = ListNode.create("[1,9,1,2,4]");
+        ListNode listB = ListNode.create("[3,2,4]");
         int skipA = 3;
         int skipB = 1;
         Question160Test.combine(listA, listB, skipA, skipB);
@@ -45,8 +42,8 @@ public class Question160Test {
     @Test
     public void testExample3() {
         int intersectVal = 0;
-        ListNode listA = ListNode.generateNodes("[2,6,4]");
-        ListNode listB = ListNode.generateNodes("[1,5]");
+        ListNode listA = ListNode.create("[2,6,4]");
+        ListNode listB = ListNode.create("[1,5]");
         int skipA = 3;
         int skipB = 2;
         Question160Test.combine(listA, listB, skipA, skipB);
@@ -58,11 +55,11 @@ public class Question160Test {
 
     @Test
     public void testCombineFunction() {
-        ListNode listA = ListNode.generateNodes("[4,1,8,1,2]");
-        ListNode listB = ListNode.generateNodes("[5,6,1,8,4,5]");
+        ListNode listA = ListNode.create("[4,1,8,1,2]");
+        ListNode listB = ListNode.create("[5,6,1,8,4,5]");
 
-        ListNode listExpectedA = ListNode.generateNodes("[4,1,8,4,5]"); // 1,2 should have changed to 4,5
-        ListNode listExpectedB = ListNode.generateNodes("[5,6,1,8,4,5]");
+        ListNode listExpectedA = ListNode.create("[4,1,8,4,5]"); // 1,2 should have changed to 4,5
+        ListNode listExpectedB = ListNode.create("[5,6,1,8,4,5]");
 
         int skipA = 2;
         int skipB = 3;
