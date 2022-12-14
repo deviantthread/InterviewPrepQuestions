@@ -38,4 +38,13 @@ public class Question112Test {
         //    Explanation: Since the tree is empty, there are no root-to-leaf paths.
         Assert.assertEquals(expected, classUnderTest.hasPathSum(root, targetSum));
     }
+
+    @Test
+    public void testExample4() {
+        TreeNode root = TreeNode.create("[1,2]");
+        int targetSum = 1;
+        boolean expected = false;
+        //    Explanation: Since the tree is empty, there are no root-to-leaf paths.
+        Assert.assertEquals(expected, classUnderTest.hasPathSum(root, targetSum));
+    }
 }
