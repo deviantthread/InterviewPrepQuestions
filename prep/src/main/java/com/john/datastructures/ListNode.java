@@ -39,6 +39,9 @@ public class ListNode {
      * format is "[1,4,3,2,5,2]"
      */
     public static ListNode create(String list) {
+        if (list.equals("[]")) {
+            return null;
+        }
         ListNode head = new ListNode(-1);
         ListNode curr = head;
 
