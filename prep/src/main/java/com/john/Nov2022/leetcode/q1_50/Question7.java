@@ -7,7 +7,46 @@ public class Question7 {
     // then flip the result if its neg
 
     public int reverse(int x) {
-        return 0;
+        boolean isNeg = x < 0;
+        if (isNeg) {
+            x *= -1;
+        }
+
+        int pos = 10;
+        int prevPos = pos;
+        while (pos <= x) {
+            prevPos = pos;
+            pos *= 10;
+
+            if (pos / 10 != prevPos) {
+                return 0;
+            }
+        }
+        //went too far
+        pos /= 10;
+
+        int prevReversed = 0;
+        int reversed = 0;
+        while (x > 0) {
+            int digit = x % 10;
+            prevReversed = reversed;
+            int curr = digit * pos;
+            reversed += curr;
+
+            // overflow check
+            if (reversed < 0 || (reversed - curr) != prevReversed) {
+                return 0;
+            }
+
+            x /= 10;
+            pos /= 10;
+        }
+
+        if (isNeg) {
+            reversed *= -1;
+        }
+
+        return reversed;
     }
 
     public int reverseStr(int x) {

@@ -30,4 +30,20 @@ public class Question7Test {
 
         assertEquals(expected, classUnderTest.reverse(input));
     }
+
+    @Test
+    public void testExample4() {
+        int input = 10;
+        int expected = 1;
+
+        assertEquals(expected, classUnderTest.reverse(input));
+    }
+
+    @Test
+    public void testExample5() {
+        int input = 1534236469;
+        int expected = 0;
+
+        assertEquals(expected, classUnderTest.reverse(input));
+    }
 }

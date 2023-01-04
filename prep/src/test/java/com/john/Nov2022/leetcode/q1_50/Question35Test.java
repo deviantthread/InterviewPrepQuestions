@@ -50,4 +50,13 @@ public class Question35Test {
 
         Assert.assertEquals(expected, classUnderTest.searchInsert(nums, target));
     }
+
+    @Test
+    public void testExample6() {
+        int[] nums = { 1,3 };
+        int target = 2;
+        int expected = 1;
+
+        Assert.assertEquals(expected, classUnderTest.searchInsert(nums, target));
+    }
 }
