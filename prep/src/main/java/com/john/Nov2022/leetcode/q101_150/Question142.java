@@ -1,4 +1,21 @@
 package com.john.Nov2022.leetcode.q101_150;
 
+import com.john.datastructures.ListNode;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Question142 {
+    public ListNode detectCycle(ListNode head) {
+        Set<ListNode> seenNodes = new HashSet<>();
+
+        while (head != null) {
+            if (seenNodes.contains(head)) {
+                return head;
+            }
+            seenNodes.add(head);
+            head = head.next;
+        }
+
+        return null;
+    }
 }
