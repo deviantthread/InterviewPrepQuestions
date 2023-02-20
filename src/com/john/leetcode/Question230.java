@@ -6,14 +6,14 @@ import java.util.PriorityQueue;
 public class Question230 {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.generateTree("1|0,");
-		TreeNode.printNodes(root);
+		OldTreeNode root = OldTreeNode.generateTree("1|0,");
+		OldTreeNode.printNodes(root);
 		int k = 3;
 		System.out.println(new Question230().kthSmallest(root, k));
 
 	}
 
-	public int kthSmallest(TreeNode root, int k) {
+	public int kthSmallest(OldTreeNode root, int k) {
 
 		Comparator<? super Integer> maxCompare = new Comparator<Integer>() {
 			@Override
@@ -32,7 +32,7 @@ public class Question230 {
 		return heap.remove();
 	}
 
-	private void findKthSmallest(TreeNode node, int k, PriorityQueue<Integer> heap) {
+	private void findKthSmallest(OldTreeNode node, int k, PriorityQueue<Integer> heap) {
 		if (heap.size() == k || node == null) {
 			return;
 		}

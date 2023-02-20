@@ -3,19 +3,19 @@ package com.john.leetcode;
 public class Question112 {
 
 	public static void main(String[] args) {
-		TreeNode root = new TreeNode(1);
+		OldTreeNode root = new OldTreeNode(1);
 		System.out.println(new Question112().hasPathSum(root, 1));
 
 	}
 
-	public boolean hasPathSum(TreeNode root, int sum) {
+	public boolean hasPathSum(OldTreeNode root, int sum) {
 		if (root == null) {
 			return false;
 		}
 		return hasPathSum(root, sum, 0);
 	}
 
-	private boolean hasPathSum(TreeNode root, int sum, int i) {
+	private boolean hasPathSum(OldTreeNode root, int sum, int i) {
 		if (root.left == null && root.right == null) {
 			return sum == (root.val + i);
 		}

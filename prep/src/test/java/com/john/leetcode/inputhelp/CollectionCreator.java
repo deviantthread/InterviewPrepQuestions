@@ -4,6 +4,7 @@ import com.google.common.base.Splitter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.apache.commons.lang3.StringUtils;
 
 public class CollectionCreator {
@@ -58,5 +59,32 @@ public class CollectionCreator {
         return listListInt.stream()
             .map(list -> list.stream().mapToInt(i -> i).toArray())
             .toArray(int[][]::new);
+    }
+
+    /**
+     * Input format "[[A,B,C,E],[S,F,C,S],[A,D,E,E]]"
+     */
+    public static char[][] create2DArrayChar(String input) {
+        String trimmed = StringUtils.removeEnd(StringUtils.removeStart(input, "["), "]");
+
+        Character[][] characters = Splitter.on("[").omitEmptyStrings().splitToStream(trimmed)
+            .map(listStr -> StringUtils.removeEnd(listStr, "]"))
+            .map(listStr -> StringUtils.removeEnd(listStr, "],"))
+            .map(listStr -> Splitter.on(",").omitEmptyStrings().splitToStream(listStr)
+                .map(str -> str.charAt(0))
+                .collect(Collectors.toList())
+                .toArray(new Character[0]))
+            .collect(Collectors.toList())
+            .toArray(new Character[0][]);
+
+        char[][] ret = new char[characters.length][];
+        for (int row = 0; row < characters.length; row++) {
+            ret[row] = new char[characters[row].length];
+            for (int col = 0; col < characters[row].length; col++) {
+                ret[row][col] = characters[row][col];
+            }
+        }
+
+        return ret;
     }
 }

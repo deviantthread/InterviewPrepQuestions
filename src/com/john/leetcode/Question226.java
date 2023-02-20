@@ -3,27 +3,27 @@ package com.john.leetcode;
 public class Question226 {
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(4);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(7);
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(3);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(9);
+        OldTreeNode root = new OldTreeNode(4);
+        root.left = new OldTreeNode(2);
+        root.right = new OldTreeNode(7);
+        root.left.left = new OldTreeNode(1);
+        root.left.right = new OldTreeNode(3);
+        root.right.left = new OldTreeNode(6);
+        root.right.right = new OldTreeNode(9);
 
-        TreeNode.printNodes(root, "original");
+        OldTreeNode.printNodes(root, "original");
 
-        TreeNode inverted = new Question226().invertTree(root);
+        OldTreeNode inverted = new Question226().invertTree(root);
 
-        TreeNode.printNodes(inverted, "inverted");
+        OldTreeNode.printNodes(inverted, "inverted");
     }
 
-    public TreeNode invertTree(TreeNode root) {
+    public OldTreeNode invertTree(OldTreeNode root) {
         if (root == null) {
             return null;
         }
 
-        TreeNode tmp = root.left;
+        OldTreeNode tmp = root.left;
         root.left = root.right;
         root.right = tmp;
 

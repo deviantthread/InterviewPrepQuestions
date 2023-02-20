@@ -5,14 +5,14 @@ import java.util.Stack;
 public class Question173 {
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(10);
-        root.left = new TreeNode(5);
-        root.right = new TreeNode(15);
-        root.left.left = new TreeNode(3);
-        root.left.right = new TreeNode(7);
-        root.right.left = new TreeNode(13);
-        root.right.right = new TreeNode(20);
-        TreeNode.printNodes(root, "original");
+        OldTreeNode root = new OldTreeNode(10);
+        root.left = new OldTreeNode(5);
+        root.right = new OldTreeNode(15);
+        root.left.left = new OldTreeNode(3);
+        root.left.right = new OldTreeNode(7);
+        root.right.left = new OldTreeNode(13);
+        root.right.right = new OldTreeNode(20);
+        OldTreeNode.printNodes(root, "original");
 
         BSTIterator bstIterator = new Question173().new BSTIterator(null);
 
@@ -26,7 +26,7 @@ public class Question173 {
         private final Stack<NodeStatus> stack = new Stack<NodeStatus>();
         private NodeStatus curr = null;
 
-        public BSTIterator(TreeNode root) {
+        public BSTIterator(OldTreeNode root) {
             if (root != null) {
                 stack.push(new NodeStatus(root));
             }
@@ -67,11 +67,11 @@ public class Question173 {
 
     private static class NodeStatus {
         public boolean haveGoneRight;
-        TreeNode node;
+        OldTreeNode node;
         boolean haveGoneLeft = false;
         boolean haveBeenPrinted = false;
 
-        public NodeStatus(TreeNode root) {
+        public NodeStatus(OldTreeNode root) {
             node = root;
         }
 

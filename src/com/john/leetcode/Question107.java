@@ -9,14 +9,14 @@ import java.util.Queue;
 public class Question107 {
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
+        OldTreeNode root = new OldTreeNode(3);
+        root.left = new OldTreeNode(9);
+        root.right = new OldTreeNode(20);
         // root.left.left = new TreeNode(4);
         // root.left.right = new TreeNode(2);
-        root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(7);
-        TreeNode.printNodes(root);
+        root.right.left = new OldTreeNode(15);
+        root.right.right = new OldTreeNode(7);
+        OldTreeNode.printNodes(root);
 
         List<List<Integer>> levels = new Question107().levelOrderBottom(root);
         for (List<Integer> level : levels) {
@@ -29,18 +29,18 @@ public class Question107 {
 
     }
 
-    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+    public List<List<Integer>> levelOrderBottom(OldTreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
-        Queue<TreeNode> curr = new LinkedList<TreeNode>();
-        Queue<TreeNode> children = new LinkedList<TreeNode>();
+        Queue<OldTreeNode> curr = new LinkedList<OldTreeNode>();
+        Queue<OldTreeNode> children = new LinkedList<OldTreeNode>();
         List<List<Integer>> levels = new LinkedList<List<Integer>>();
         levels.add(new ArrayList<Integer>());
 
         curr.add(root);
         while (!curr.isEmpty()) {
-            TreeNode n = curr.remove();
+            OldTreeNode n = curr.remove();
             levels.get(0).add(n.val);
             if (n.left != null) {
                 children.add(n.left);
@@ -53,7 +53,7 @@ public class Question107 {
                 if (!children.isEmpty()) {
                     levels.add(0, new ArrayList<Integer>());
                 }
-                Queue<TreeNode> tmp = curr;
+                Queue<OldTreeNode> tmp = curr;
                 curr = children;
                 children = tmp;
             }

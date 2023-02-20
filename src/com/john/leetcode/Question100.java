@@ -4,22 +4,22 @@ public class Question100 {
 
     public static void main(String[] args) {
 
-        TreeNode pHead = new TreeNode(0);
+        OldTreeNode pHead = new OldTreeNode(0);
         // pHead.left = new TreeNode(-1);
         // pHead.right = new TreeNode(1);
 
-        TreeNode qHead = new TreeNode(0);
+        OldTreeNode qHead = new OldTreeNode(0);
         // qHead.left = new TreeNode(-1);
         // qHead.right = new TreeNode(0);
 
-        TreeNode.printNodes(pHead, "pHead");
-        TreeNode.printNodes(qHead, "qHead");
+        OldTreeNode.printNodes(pHead, "pHead");
+        OldTreeNode.printNodes(qHead, "qHead");
 
         System.out.println(new Question100().isSameTree(pHead, qHead));
 
     }
 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
+    public boolean isSameTree(OldTreeNode p, OldTreeNode q) {
         if (p == null && q == null) {
             return true;
         } else if (p == null || q == null) {

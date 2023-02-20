@@ -9,11 +9,11 @@ import java.util.Queue;
 public class Question102 {
 
     public static void main(String[] args) {
-        TreeNode pHead = new TreeNode(0);
-        pHead.left = new TreeNode(-1);
-        pHead.right = new TreeNode(1);
-        pHead.left.left = new TreeNode(5);
-        pHead.left.right = new TreeNode(9);
+        OldTreeNode pHead = new OldTreeNode(0);
+        pHead.left = new OldTreeNode(-1);
+        pHead.right = new OldTreeNode(1);
+        pHead.left.left = new OldTreeNode(5);
+        pHead.left.right = new OldTreeNode(9);
 
         List<List<Integer>> levels = new Question102().levelOrder(pHead);
         for (List<Integer> level : levels) {
@@ -25,19 +25,19 @@ public class Question102 {
         }
     }
 
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder(OldTreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
         List<List<Integer>> levels = new ArrayList<List<Integer>>();
         levels.add(new ArrayList<Integer>());
 
-        Queue<TreeNode> curr = new LinkedList<TreeNode>();
-        Queue<TreeNode> children = new LinkedList<TreeNode>();
+        Queue<OldTreeNode> curr = new LinkedList<OldTreeNode>();
+        Queue<OldTreeNode> children = new LinkedList<OldTreeNode>();
         curr.add(root);
 
         while (!curr.isEmpty()) {
-            TreeNode n = curr.remove();
+            OldTreeNode n = curr.remove();
             levels.get(levels.size() - 1).add(n.val);
 
             if (n.left != null) {
@@ -51,7 +51,7 @@ public class Question102 {
                 if (!children.isEmpty()) {
                     levels.add(new ArrayList<Integer>());
                 }
-                Queue<TreeNode> tmp = curr;
+                Queue<OldTreeNode> tmp = curr;
                 curr = children;
                 children = tmp;
             }

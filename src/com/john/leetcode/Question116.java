@@ -12,7 +12,7 @@ public class Question116 {
 		left.right = new TreeLinkNode(5);
 		right.left = new TreeLinkNode(6);
 		right.right = new TreeLinkNode(7);
-		TreeNode.printNodes(root);
+		OldTreeNode.printNodes(root);
 		new Question116().connect(root);
 	}
 
@@ -31,7 +31,7 @@ public class Question116 {
 		connect(root.right);
 	}
 
-	private static class TreeLinkNode extends TreeNode {
+	private static class TreeLinkNode extends OldTreeNode {
 		TreeLinkNode next;
 		TreeLinkNode left;
 		TreeLinkNode right;

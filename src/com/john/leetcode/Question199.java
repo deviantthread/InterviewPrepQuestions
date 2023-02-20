@@ -8,23 +8,23 @@ import java.util.Queue;
 public class Question199 {
 
 	public static void main(String[] args) {
-		TreeNode tree = TreeNode.generateTree("1|2,3|,5,,4");
+		OldTreeNode tree = OldTreeNode.generateTree("1|2,3|,5,,4");
 		List<Integer> rightSideView = new Question199().rightSideView(tree);
 		CollUtils.print(rightSideView);
 	}
 
-	public List<Integer> rightSideView(TreeNode root) {
+	public List<Integer> rightSideView(OldTreeNode root) {
 		List<Integer> rightSide = new ArrayList<Integer>();
 		if (root == null) {
 			return rightSide;
 		}
 
-		Queue<TreeNode> curr = new LinkedList<TreeNode>();
-		Queue<TreeNode> children = new LinkedList<TreeNode>();
+		Queue<OldTreeNode> curr = new LinkedList<OldTreeNode>();
+		Queue<OldTreeNode> children = new LinkedList<OldTreeNode>();
 		curr.add(root);
 
 		while (!curr.isEmpty()) {
-			TreeNode node = curr.remove();
+			OldTreeNode node = curr.remove();
 
 			if (node.left != null) {
 				children.add(node.left);
@@ -35,7 +35,7 @@ public class Question199 {
 
 			if (curr.isEmpty()) {
 				rightSide.add(node.val);
-				Queue<TreeNode> tmp = curr;
+				Queue<OldTreeNode> tmp = curr;
 				curr = children;
 				children = tmp;
 			}

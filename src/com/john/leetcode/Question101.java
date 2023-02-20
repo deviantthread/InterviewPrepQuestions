@@ -3,20 +3,20 @@ package com.john.leetcode;
 public class Question101 {
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(2);
-        root.left.left = new TreeNode(3);
-        root.left.right = new TreeNode(4);
-        root.right.left = new TreeNode(4);
-        root.right.right = new TreeNode(3);
+        OldTreeNode root = new OldTreeNode(1);
+        root.left = new OldTreeNode(2);
+        root.right = new OldTreeNode(2);
+        root.left.left = new OldTreeNode(3);
+        root.left.right = new OldTreeNode(4);
+        root.right.left = new OldTreeNode(4);
+        root.right.right = new OldTreeNode(3);
 
-        TreeNode.printNodes(root);
+        OldTreeNode.printNodes(root);
 
         System.out.println(new Question101().isSymmetric(root));
     }
 
-    public boolean isSymmetric(TreeNode root) {
+    public boolean isSymmetric(OldTreeNode root) {
         if (root == null) {
             return true;
         }
@@ -24,7 +24,7 @@ public class Question101 {
         return isSymmetric(root.left, root.right);
     }
 
-    private boolean isSymmetric(TreeNode left, TreeNode right) {
+    private boolean isSymmetric(OldTreeNode left, OldTreeNode right) {
         if (left == null && right == null) {
             return true;
         } else if (left == null || right == null) {

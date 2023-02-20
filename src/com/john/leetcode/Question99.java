@@ -9,14 +9,14 @@ public class Question99 {
 		// TreeNode root = TreeNode.generateTree("10|5,15|3,7,,17");
 		// root.print();
 
-		TreeNode root = TreeNode.generateTree("0|1");
+		OldTreeNode root = OldTreeNode.generateTree("0|1");
 		root.print("org");
 		new Question99().recoverTree(root);
 		root.print("fixed");
 	}
 
-	public void recoverTree(TreeNode root) {
-		List<TreeNode> badNodes = new ArrayList<TreeNode>();
+	public void recoverTree(OldTreeNode root) {
+		List<OldTreeNode> badNodes = new ArrayList<OldTreeNode>();
 		boolean isRootGood = isRootGood(root);
 
 		if (isRootGood) {
@@ -31,7 +31,7 @@ public class Question99 {
 		badNodes.get(1).val = tmp;
 	}
 
-	private boolean isRootGood(TreeNode root) {
+	private boolean isRootGood(OldTreeNode root) {
 		boolean rootGood = checkNode(root);
 
 		if (rootGood) {
@@ -44,7 +44,7 @@ public class Question99 {
 
 	}
 
-	private boolean checkNode(TreeNode node) {
+	private boolean checkNode(OldTreeNode node) {
 		if (node == null) {
 			return true;
 		}
@@ -53,7 +53,7 @@ public class Question99 {
 		return goodRight && goodLeft;
 	}
 
-	private void findBadNodes(TreeNode node, List<TreeNode> badNodes, int minValue, int maxValue) {
+	private void findBadNodes(OldTreeNode node, List<OldTreeNode> badNodes, int minValue, int maxValue) {
 		if (node == null || badNodes.size() == 2) {
 			return;
 		}

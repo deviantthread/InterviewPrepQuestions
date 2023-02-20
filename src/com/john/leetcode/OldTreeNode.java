@@ -6,13 +6,13 @@ import java.util.Queue;
 
 import com.google.common.base.Splitter;
 
-public class TreeNode {
+public class OldTreeNode {
 
 	public int val;
-	public TreeNode left;
-	public TreeNode right;
+	public OldTreeNode left;
+	public OldTreeNode right;
 
-	public TreeNode(int x) {
+	public OldTreeNode(int x) {
 		val = x;
 	}
 
@@ -37,23 +37,23 @@ public class TreeNode {
 	// }
 	// }
 
-	public static void printNodes(TreeNode head, String msg) {
+	public static void printNodes(OldTreeNode head, String msg) {
 		System.out.println(msg);
 		printNodes(head);
 	}
 
-	public static void printNodes(TreeNode head) {
+	public static void printNodes(OldTreeNode head) {
 		if (head == null) {
 			return;
 		}
 
-		Queue<TreeNode> curr = new LinkedList<TreeNode>();
-		Queue<TreeNode> children = new LinkedList<TreeNode>();
+		Queue<OldTreeNode> curr = new LinkedList<OldTreeNode>();
+		Queue<OldTreeNode> children = new LinkedList<OldTreeNode>();
 		String nextLine = "\n";
 		curr.add(head);
 
 		while (!curr.isEmpty()) {
-			TreeNode n = curr.remove();
+			OldTreeNode n = curr.remove();
 			System.out.print(n.val + "   ");
 
 			if (n.left != null) {
@@ -73,7 +73,7 @@ public class TreeNode {
 			if (curr.isEmpty()) {
 				System.out.println(nextLine);
 				nextLine = "\n";
-				Queue<TreeNode> tmp = curr;
+				Queue<OldTreeNode> tmp = curr;
 				curr = children;
 				children = tmp;
 			}
@@ -82,7 +82,7 @@ public class TreeNode {
 		System.out.println();
 	}
 
-	public static void printNodes2(TreeNode head) {
+	public static void printNodes2(OldTreeNode head) {
 		// to do this better, use an algorithm similar to this:
 		// get the height h
 		// each node gets three characters, ' 1 ', or ' 10'
@@ -94,11 +94,11 @@ public class TreeNode {
 	 * pass in "10|5,15|3,7,,17". '|' for level separators, ',' for element
 	 * separator
 	 */
-	public static TreeNode generateTree(String tree) {
+	public static OldTreeNode generateTree(String tree) {
 		Iterable<String> levels = Splitter.on('|').split(tree);
 		Iterator<String> levelsIter = levels.iterator();
-		TreeNode root = new TreeNode(Integer.parseInt(levelsIter.next()));
-		Queue<TreeNode> q = new LinkedList<TreeNode>();
+		OldTreeNode root = new OldTreeNode(Integer.parseInt(levelsIter.next()));
+		Queue<OldTreeNode> q = new LinkedList<OldTreeNode>();
 		q.add(root);
 
 		while (levelsIter.hasNext()) {
@@ -106,16 +106,16 @@ public class TreeNode {
 			Iterable<String> nodeVals = Splitter.on(',').split(level);
 			Iterator<String> nodeValsIter = nodeVals.iterator();
 			while (nodeValsIter.hasNext()) {
-				TreeNode node = q.poll();
+				OldTreeNode node = q.poll();
 				String leftVal = nodeValsIter.next();
 				if (!leftVal.equals("")) {
-					node.left = new TreeNode(Integer.parseInt(leftVal));
+					node.left = new OldTreeNode(Integer.parseInt(leftVal));
 					q.add(node.left);
 				}
 				if (nodeValsIter.hasNext()) {
 					String rightVal = nodeValsIter.next();
 					if (!rightVal.equals("")) {
-						node.right = new TreeNode(Integer.parseInt(rightVal));
+						node.right = new OldTreeNode(Integer.parseInt(rightVal));
 						q.add(node.right);
 					}
 				}

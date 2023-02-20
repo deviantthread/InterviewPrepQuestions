@@ -6,11 +6,11 @@ import java.util.List;
 public class Question113 {
 
 	public static void main(String[] args) {
-		TreeNode root = new TreeNode(1);
+		OldTreeNode root = new OldTreeNode(1);
 		CollUtils.print(new Question113().pathSum(root, 1));
 	}
 
-	public List<List<Integer>> pathSum(TreeNode root, int sum) {
+	public List<List<Integer>> pathSum(OldTreeNode root, int sum) {
 		if (root == null) {
 			return new ArrayList<List<Integer>>();
 		}
@@ -21,7 +21,7 @@ public class Question113 {
 
 	}
 
-	private void hasPathSum(TreeNode root, int sum, int currSum, List<List<Integer>> ret, List<Integer> currPath) {
+	private void hasPathSum(OldTreeNode root, int sum, int currSum, List<List<Integer>> ret, List<Integer> currPath) {
 		currPath.add(root.val);
 		if (root.left == null && root.right == null) {
 			if (sum == (root.val + currSum)) {

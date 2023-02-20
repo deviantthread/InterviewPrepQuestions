@@ -6,7 +6,7 @@ public class Question236 {
 
 	}
 
-	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+	public OldTreeNode lowestCommonAncestor(OldTreeNode root, OldTreeNode p, OldTreeNode q) {
 		if (root == p || root == q) {
 			return root;
 		}
@@ -23,7 +23,7 @@ public class Question236 {
 		}
 	}
 
-	private boolean containsNode(TreeNode root, TreeNode node) {
+	private boolean containsNode(OldTreeNode root, OldTreeNode node) {
 		if (root == null) {
 			return false;
 		}

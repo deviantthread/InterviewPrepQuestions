@@ -9,13 +9,13 @@ import java.util.Queue;
 public class Question103 {
 
     public static void main(String[] args) {
-        TreeNode pHead = new TreeNode(1);
-        pHead.left = new TreeNode(2);
-        pHead.right = new TreeNode(3);
-        pHead.left.left = new TreeNode(4);
+        OldTreeNode pHead = new OldTreeNode(1);
+        pHead.left = new OldTreeNode(2);
+        pHead.right = new OldTreeNode(3);
+        pHead.left.left = new OldTreeNode(4);
         // pHead.left.right = new TreeNode(2);
         // pHead.right.left = new TreeNode(15);
-        pHead.right.right = new TreeNode(5);
+        pHead.right.right = new OldTreeNode(5);
 
         List<List<Integer>> levels = new Question103().zigzagLevelOrder(pHead);
         for (List<Integer> level : levels) {
@@ -27,20 +27,20 @@ public class Question103 {
         }
     }
 
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    public List<List<Integer>> zigzagLevelOrder(OldTreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
         List<List<Integer>> levels = new ArrayList<List<Integer>>();
         levels.add(new LinkedList<Integer>());
 
-        Queue<TreeNode> curr = new LinkedList<TreeNode>();
-        Queue<TreeNode> children = new LinkedList<TreeNode>();
+        Queue<OldTreeNode> curr = new LinkedList<OldTreeNode>();
+        Queue<OldTreeNode> children = new LinkedList<OldTreeNode>();
         curr.add(root);
         boolean forward = true;
 
         while (!curr.isEmpty()) {
-            TreeNode n = curr.remove();
+            OldTreeNode n = curr.remove();
             List<Integer> level = levels.get(levels.size() - 1);
             if (forward) {
                 level.add(n.val);
@@ -61,7 +61,7 @@ public class Question103 {
                     levels.add(new ArrayList<Integer>());
                 }
 
-                Queue<TreeNode> tmp = curr;
+                Queue<OldTreeNode> tmp = curr;
                 curr = children;
                 children = tmp;
             }

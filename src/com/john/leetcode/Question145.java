@@ -7,33 +7,33 @@ import java.util.Stack;
 public class Question145 {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.generateTree("1|0,");
-		TreeNode.printNodes(root);
+		OldTreeNode root = OldTreeNode.generateTree("1|0,");
+		OldTreeNode.printNodes(root);
 		List<Integer> postorderTraversal = new Question145().postorderTraversal(root);
 		List<Integer> postorderTraversalRec = new Question145().postorderTraversalRecursive(root);
 		CollUtils.print(postorderTraversalRec, "recurse");
 		CollUtils.print(postorderTraversal, "iter");
 	}
 
-	public List<Integer> postorderTraversal(TreeNode root) {
+	public List<Integer> postorderTraversal(OldTreeNode root) {
 		return postOrderTraversalIterative(root);
 	}
 
-	public List<Integer> postorderTraversalRecursive(TreeNode root) {
+	public List<Integer> postorderTraversalRecursive(OldTreeNode root) {
 		List<Integer> ret = new ArrayList<Integer>();
 		postorderTraversalRecursive(root, ret);
 		return ret;
 	}
 
-	private List<Integer> postOrderTraversalIterative(TreeNode root) {
-		Stack<TreeNode> stack = new Stack<TreeNode>();
+	private List<Integer> postOrderTraversalIterative(OldTreeNode root) {
+		Stack<OldTreeNode> stack = new Stack<OldTreeNode>();
 		Stack<Integer> stack2 = new Stack<Integer>();
 		if (root != null) {
 			stack.push(root);
 		}
 
 		while (!stack.isEmpty()) {
-			TreeNode node = stack.pop();
+			OldTreeNode node = stack.pop();
 
 			if (node.left != null) {
 				stack.push(node.left);
@@ -52,7 +52,7 @@ public class Question145 {
 	}
 
 	// works
-	private void postorderTraversalRecursive(TreeNode node, List<Integer> ret) {
+	private void postorderTraversalRecursive(OldTreeNode node, List<Integer> ret) {
 		if (node == null) {
 			return;
 		}

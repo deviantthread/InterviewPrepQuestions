@@ -3,19 +3,19 @@ package com.john.leetcode;
 public class Question110 {
 
 	public static void main(String[] args) {
-		TreeNode root = TreeNode.generateTree("1|2,3|4,,,|4,,,,,,");
+		OldTreeNode root = OldTreeNode.generateTree("1|2,3|4,,,|4,,,,,,");
 		root.print("org");
 		System.out.println("isBalanced: " + new Question110().isBalanced(root));
 	}
 
-	public boolean isBalanced(TreeNode root) {
+	public boolean isBalanced(OldTreeNode root) {
 		if (root == null) {
 			return true;
 		}
 		return isBalanced(root, 0) != -1;
 	}
 
-	private int isBalanced(TreeNode node, int depth) {
+	private int isBalanced(OldTreeNode node, int depth) {
 		if (node == null) {
 			return depth - 1;
 		}

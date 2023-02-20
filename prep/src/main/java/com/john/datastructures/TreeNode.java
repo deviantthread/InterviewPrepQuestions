@@ -77,6 +77,7 @@ public class TreeNode {
         List<String> strs = Splitter.on(",").omitEmptyStrings().splitToList(StringUtils.strip(input, "[]"));
 
         return create(strs.stream()
+            .map(String::trim)
             .map(s -> s.equals("null") ? null : Integer.parseInt(s))
             .toArray(Integer[]::new));
     }

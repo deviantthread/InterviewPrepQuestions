@@ -4,30 +4,30 @@ public class Question235 {
 
     public static void main(String[] args) {
 
-        TreeNode root = new TreeNode(6);
-        TreeNode left = new TreeNode(2);
+        OldTreeNode root = new OldTreeNode(6);
+        OldTreeNode left = new OldTreeNode(2);
         root.left = left;
-        left.left = new TreeNode(0);
-        TreeNode leftRight = new TreeNode(4);
+        left.left = new OldTreeNode(0);
+        OldTreeNode leftRight = new OldTreeNode(4);
         left.right = leftRight;
-        leftRight.left = new TreeNode(3);
-        leftRight.right = new TreeNode(5);
+        leftRight.left = new OldTreeNode(3);
+        leftRight.right = new OldTreeNode(5);
 
-        TreeNode right = new TreeNode(8);
+        OldTreeNode right = new OldTreeNode(8);
         root.right = right;
-        right.left = new TreeNode(7);
-        right.right = new TreeNode(9);
+        right.left = new OldTreeNode(7);
+        right.right = new OldTreeNode(9);
 
-        TreeNode.printNodes(root);
+        OldTreeNode.printNodes(root);
 
-        TreeNode p = left;
-        TreeNode q = left.right;
+        OldTreeNode p = left;
+        OldTreeNode q = left.right;
         System.out.println(new Question235().lowestCommonAncestor(root, p, q));
 
     }
 
     // it's a BST, its sorted, no need to check the rest of the tree
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public OldTreeNode lowestCommonAncestor(OldTreeNode root, OldTreeNode p, OldTreeNode q) {
         if (root == p || root == q) {
             return root;
         }
@@ -44,7 +44,7 @@ public class Question235 {
         }
     }
 
-    public TreeNode lowestCommonAncestorSlow(TreeNode root, TreeNode p, TreeNode q) {
+    public OldTreeNode lowestCommonAncestorSlow(OldTreeNode root, OldTreeNode p, OldTreeNode q) {
         if (root == p || root == q) {
             return root;
         }
@@ -60,7 +60,7 @@ public class Question235 {
         }
     }
 
-    private boolean nodeExists(TreeNode root, TreeNode node) {
+    private boolean nodeExists(OldTreeNode root, OldTreeNode node) {
         if (root == null) {
             return false;
         }
