@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class Question4Test {
-    Question4 question4 = new Question4();
+    private final Question4 question4 = new Question4();
 
     @Test
     public void testExample1() {

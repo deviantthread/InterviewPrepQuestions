@@ -1,0 +1,13 @@
+package com.john.Nov2022.leetcode.qBIG;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class Question1975Test {
+    private final Question1975 classUnderTest = new Question1975();
+
+    @Test
+    public void testUnAttempted() {
+        Assert.fail("unattempted");
+    }
+}

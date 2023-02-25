@@ -12,8 +12,8 @@ public class Question5Test {
     @Test
     public void testExample1() {
         String input = "babad";
-        String expected = "bab";
-        //        Explanation: "aba" is also a valid answer.
+        String expected = "aba";
+        //        Explanation: "bab" is also a valid answer.
 
         Assert.assertEquals(expected, classUnderTest.longestPalindrome(input));
     }

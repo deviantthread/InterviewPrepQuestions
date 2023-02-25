@@ -87,4 +87,22 @@ public class CollectionCreator {
 
         return ret;
     }
+
+    /**
+     * Input format "[ThisDEL is anDEL example, DEL ofDEL some inputDEL text.]"
+     * DEL for delimiter
+     */
+    public static String[] createArrayString(String input) {
+        return createListString(input).toArray(new String[0]);
+    }
+
+    /**
+     * Input format "[ThisDEL is anDEL example, DEL ofDEL some inputDEL text.]"
+     * DEL for delimiter
+     */
+    public static List<String> createListString(String input) {
+        String trimmed = StringUtils.removeEnd(StringUtils.removeStart(input, "["), "]");
+
+        return Splitter.on("DEL").omitEmptyStrings().splitToList(trimmed);
+    }
 }
