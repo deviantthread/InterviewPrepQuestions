@@ -6,6 +6,25 @@ public class Question75 {
             return;
         }
 
+        int[] colors = new int[3];
+        for (int num : nums) {
+            colors[num]++;
+        }
+
+        int numsIdx = 0;
+        for (int colorIdx = 0; colorIdx < colors.length; colorIdx++) {
+            while (colors[colorIdx] > 0) {
+                nums[numsIdx++] = colorIdx;
+                colors[colorIdx]--;
+            }
+        }
+    }
+
+    public void sortColorsMergeSort(int[] nums) {
+        if (nums == null || nums.length < 2) {
+            return;
+        }
+
         mergeSort(nums, 0, nums.length - 1);
     }
 

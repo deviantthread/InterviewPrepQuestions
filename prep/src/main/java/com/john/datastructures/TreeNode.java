@@ -6,14 +6,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
+import java.util.stream.IntStream;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -162,9 +159,50 @@ public class TreeNode {
         return true;
     }
 
-    //TODO: write this
-    //    @Override
-    //    public String toString() {
-    //
-    //    }
+    public void println() {
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        int depth = findDepth(this);
+        int maxLevelLen = (int) Math.pow(2, depth +1);
+        List<List<String>> levels = IntStream.range(0, depth * 2 - 1)
+            .mapToObj(i -> new ArrayList<String>())
+            .collect(Collectors.toList());
+
+        populateLevels(this, levels, 0, maxLevelLen / 2);
+
+        String strTree = levels.stream()
+            .map(levelList -> levelList.stream().reduce("", (a, b) -> a + b))
+            .reduce("", (a, b) -> a + "\n" + b);
+
+        return strTree;
+    }
+
+    private void populateLevels(TreeNode root, List<List<String>> levels, int currLevel, int leftPad) {
+        levels.get(currLevel).add(StringUtils.leftPad(String.valueOf(root.val), leftPad, ' '));
+
+        if (root.left != null) {
+            levels.get(currLevel + 1).add(StringUtils.leftPad("/", leftPad - 1, ' '));
+            populateLevels(root.left, levels, currLevel + 2, leftPad - 2);
+        }
+
+        if (root.right != null) {
+            int pad = root.left != null ? 2 : leftPad + 1;
+            levels.get(currLevel + 1).add(StringUtils.leftPad("\\", pad, ' '));
+            populateLevels(root.right, levels, currLevel + 2, pad + 2);
+        }
+    }
+
+    private int findDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int leftDepth = findDepth(root.left);
+        int rightDepth = findDepth(root.right);
+
+        return Math.max(leftDepth, rightDepth) + 1;
+    }
 }

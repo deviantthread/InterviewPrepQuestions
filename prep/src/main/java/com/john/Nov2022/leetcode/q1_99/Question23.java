@@ -9,6 +9,55 @@ public class Question23 {
         if (lists == null || lists.length == 0) {
             return null;
         }
+        // put the link lists into a sort of map
+        // head value -> rest of list
+
+        // sort map by head value
+        // grab first element of map, replacing with next element of its list
+        // go to sort map
+        // replace empty linked list with null
+        // stop sorting when first element of map is null
+        // all this time be creating the result linked list.
+        // lotsa sorting of k items
+
+        sortNodes(lists);
+
+        ListNode preHead = new ListNode();
+        ListNode curr = preHead;
+        while (lists[0] != null) {
+            ListNode lowestNode = lists[0];
+            curr.next = lowestNode;
+            curr = curr.next;
+            lists[0] = lowestNode.next;
+
+            sortNodes(lists);
+        }
+
+        return preHead.next;
+    }
+
+    private void sortNodes(ListNode[] lists) {
+        int lowestIdx = -1;
+
+        for (int i = 0; i < lists.length; i++) {
+            if (lists[i] != null) {
+                if (lowestIdx < 0 || lists[i].val < lists[lowestIdx].val) {
+                    lowestIdx = i;
+                }
+            }
+        }
+
+        if (lowestIdx >= 0) {
+            ListNode tmp = lists[0];
+            lists[0] = lists[lowestIdx];
+            lists[lowestIdx] = tmp;
+        }
+    }
+
+    public ListNode mergeKListsPriorityQueue(ListNode[] lists) {
+        if (lists == null || lists.length == 0) {
+            return null;
+        }
 
         // populate the priority queue
         PriorityQueue<Node> nodes = new PriorityQueue<>(Comparator.comparing(Node::getValue));
