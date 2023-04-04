@@ -78,6 +78,23 @@ public class ListNode {
         System.out.println(head.toString());
     }
 
+    public ListNode getTail() {
+        ListNode curr = this;
+        while (curr.next != null) {
+            curr = curr.next;
+        }
+
+        return curr;
+    }
+
+    public ListNode getIndex(int idx) {
+        ListNode curr = this;
+        for (int i = 0; i < idx; i++) {
+            curr = curr.next;
+        }
+        return curr;
+    }
+
     @Override
     public String toString() {
         int[] ints = ListNode.toArray(this);

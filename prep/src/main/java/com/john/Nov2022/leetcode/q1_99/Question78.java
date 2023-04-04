@@ -6,6 +6,33 @@ import java.util.List;
 public class Question78 {
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
+        if (nums == null || nums.length == 0) {
+            result.add(new ArrayList<>());
+            return result;
+        }
+
+        chooseOrNotChooseSubset(result, new ArrayList<>(), nums, 0);
+
+        return result;
+    }
+
+    private void chooseOrNotChooseSubset(List<List<Integer>> result, List<Integer> curr, int[] nums, int i) {
+        if (i >= nums.length) {
+            result.add(curr);
+            return;
+        }
+
+        List<Integer> withNum = copy(curr);
+        List<Integer> withoutNum = copy(curr);
+
+        withNum.add(nums[i]);
+
+        chooseOrNotChooseSubset(result, withNum, nums, i + 1);
+        chooseOrNotChooseSubset(result, withoutNum, nums, i + 1);
+    }
+
+    public List<List<Integer>> subsetsMyClunkyWay(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
         result.add(new ArrayList<>());
         if (nums == null || nums.length == 0) {
             return result;

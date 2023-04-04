@@ -28,6 +28,7 @@ public class CollectionCreator {
         }
         String trimmed = StringUtils.removeEnd(StringUtils.removeStart(input, "["), "]");
         return Splitter.on(",").splitToStream(trimmed)
+            .map(StringUtils::trim)
             .map(Integer::parseInt).collect(Collectors.toList());
     }
 
@@ -103,6 +104,8 @@ public class CollectionCreator {
     public static List<String> createListString(String input) {
         String trimmed = StringUtils.removeEnd(StringUtils.removeStart(input, "["), "]");
 
-        return Splitter.on("DEL").omitEmptyStrings().splitToList(trimmed);
+        return Splitter.on("DEL").omitEmptyStrings()
+            .splitToStream(trimmed)
+            .collect(Collectors.toList());
     }
 }

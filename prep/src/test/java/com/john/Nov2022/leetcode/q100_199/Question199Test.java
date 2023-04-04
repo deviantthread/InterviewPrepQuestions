@@ -1,13 +1,32 @@
 package com.john.Nov2022.leetcode.q100_199;
 
-import org.junit.Assert;
+import com.john.datastructures.TreeNode;
+import com.john.leetcode.inputhelp.CollectionCreator;
+import com.john.utils.ListAssert;
+import java.util.List;
 import org.junit.Test;
 
 public class Question199Test {
     private Question199 classUnderTest = new Question199();
 
     @Test
-    public void testUnAttempted() {
-        Assert.fail("unattempted");
+    public void testExample1() {
+        TreeNode root = TreeNode.create("[1,2,3,null,5,null,4]");
+        List<Integer> expected = CollectionCreator.createListInt("[1,3,4]");
+        ListAssert.assertListEquals(expected, classUnderTest.rightSideView(root));
+    }
+
+    @Test
+    public void testExample2() {
+        TreeNode root = TreeNode.create("[1,null,3]");
+        List<Integer> expected = CollectionCreator.createListInt("[1,3]");
+        ListAssert.assertListEquals(expected, classUnderTest.rightSideView(root));
+    }
+
+    @Test
+    public void testExample3() {
+        TreeNode root = TreeNode.create("[]");
+        List<Integer> expected = CollectionCreator.createListInt("[]");
+        ListAssert.assertListEquals(expected, classUnderTest.rightSideView(root));
     }
 }
