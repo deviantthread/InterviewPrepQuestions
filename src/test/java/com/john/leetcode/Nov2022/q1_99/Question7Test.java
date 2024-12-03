@@ -2,7 +2,6 @@ package com.john.leetcode.Nov2022.q1_99;
 
 import static org.junit.Assert.assertEquals;
 
-import com.john.leetcode.Nov2022.q1_99.Question7;
 import org.junit.Test;
 
 public class Question7Test {

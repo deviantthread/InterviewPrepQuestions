@@ -1,7 +1,7 @@
 package com.john.leetcode.Nov2022.q1_99;
 
-import com.john.utils.CollectionCreator;
 import com.john.utils.ArrayAssert;
+import com.john.utils.CollectionCreator;
 import org.junit.Assert;
 import org.junit.Test;
 

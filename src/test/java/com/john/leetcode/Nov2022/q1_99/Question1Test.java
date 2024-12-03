@@ -1,6 +1,5 @@
 package com.john.leetcode.Nov2022.q1_99;
 
-import com.john.leetcode.Nov2022.q1_99.Question1;
 import java.util.stream.IntStream;
 import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Assert;

@@ -1,6 +1,5 @@
 package com.john.leetcode.Nov2022.q700_799;
 
-import com.john.leetcode.Nov2022.q700_799.Question706;
 import com.john.leetcode.Nov2022.q700_799.Question706.MyHashMap;
 import com.john.utils.MapAssert;
 import java.util.HashMap;

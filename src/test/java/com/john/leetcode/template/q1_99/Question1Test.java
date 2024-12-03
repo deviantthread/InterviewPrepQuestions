@@ -1,6 +1,6 @@
-package com.john.template.leetcode.q1_99;
+package com.john.leetcode.template.q1_99;
 
-import com.john.leetcode.template.q1_99.q1_99.Question1;
+import com.john.leetcode.template.q1_99.Question1;
 import org.junit.Assert;
 import org.junit.Test;
 

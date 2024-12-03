@@ -1,6 +1,5 @@
 package com.john.leetcode.Nov2022.q1_99;
 
-import com.john.leetcode.Nov2022.q1_99.Question49;
 import org.junit.Assert;
 import org.junit.Test;
 

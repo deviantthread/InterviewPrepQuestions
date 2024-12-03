@@ -1,7 +1,6 @@
 package com.john.leetcode.Nov2022.q1_99;
 
 import com.john.datastructures.ListNode;
-import com.john.leetcode.Nov2022.q1_99.Question21;
 import org.junit.Assert;
 import org.junit.Test;
 
