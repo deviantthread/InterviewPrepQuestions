@@ -1,0 +1,13 @@
+package com.john.leetcode.Nov2022.q900_999;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class Question980Test {
+    private final Question980 classUnderTest = new Question980();
+
+    @Test
+    public void testUnAttempted() {
+        Assert.fail("unattempted");
+    }
+}
