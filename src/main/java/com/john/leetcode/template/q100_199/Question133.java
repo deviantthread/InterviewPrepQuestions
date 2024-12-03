@@ -1,5 +1,6 @@
 package com.john.leetcode.template.q100_199;
 
+import com.john.leetcode.Nov2022.q100_199.Question133.Node;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -12,38 +13,7 @@ import java.util.stream.Collectors;
 
 public class Question133 {
     public Node cloneGraph(Node node) {
-        if (node == null) {
-            return null;
-        } else if (node.neighbors == null || node.neighbors.isEmpty()) {
-            return new Node(node.val);
-        }
-
-        Map<Integer, Node> newNodes = new HashMap<>();
-        Set<Integer> processed = new HashSet<>();
-        Queue<Node> originalNodeQueue = new LinkedList<>();
-        originalNodeQueue.offer(node);
-        processed.add(node.val);
-        newNodes.put(node.val, new Node(node.val));
-
-        while (!originalNodeQueue.isEmpty()) {
-            Node curr = originalNodeQueue.poll();
-            Node newNode = newNodes.get(curr.val);
-
-            for (Node neighbor : curr.neighbors) {
-                if (!processed.contains(neighbor.val)) {
-                    originalNodeQueue.offer(neighbor);
-                    processed.add(neighbor.val);
-                }
-
-                if (!newNodes.containsKey(neighbor.val)) {
-                    newNodes.put(neighbor.val, new Node(neighbor.val));
-                }
-
-                newNode.neighbors.add(newNodes.get(neighbor.val));
-            }
-        }
-
-        return newNodes.get(node.val);
+        return null;
     }
 
     public static class Node {
@@ -65,4 +35,5 @@ public class Question133 {
             return String.format("%d -> [%s]", val, neighbors);
         }
     }
+
 }

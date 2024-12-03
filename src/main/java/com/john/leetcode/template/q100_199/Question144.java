@@ -6,20 +6,4 @@ import java.util.List;
 
 public class Question144 {
 
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> ret = new ArrayList<>();
-
-        preorderTraversalRecurse(root, ret);
-
-        return ret;
-    }
-
-    private void preorderTraversalRecurse(TreeNode node, List<Integer> ret) {
-        if (node == null) {
-            return;
-        }
-        ret.add(node.val);
-        preorderTraversalRecurse(node.left, ret);
-        preorderTraversalRecurse(node.right, ret);
-    }
-}
+    public List<Integer> preorderTraversal(TreeNode root) { return null;}}

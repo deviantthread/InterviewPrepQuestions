@@ -35,13 +35,9 @@ public class Question1Test {
     }
 
     private void testTwoSumBase(int[] nums, int target) {
-        int[] hashResult = question1.twoSumHashMap(nums, target);
+        int[] hashResult = question1.twoSum(nums, target);
 
         verifyCorrect(nums, hashResult, target);
-
-        int[] binaryResult = question1.twoSumBinarySearch(nums, target);
-
-        verifyCorrect(nums, binaryResult, target);
     }
 
     private void verifyCorrect(int[] nums, int[] ret, int target) {

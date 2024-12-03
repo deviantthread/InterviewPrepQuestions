@@ -23,19 +23,4 @@ public class Question12 {
         valueToSymbols.put(1, "I");
     }
 
-    public String intToRoman(int num) {
-        String result = "";
-
-        while (num > 0) {
-            for (Entry<Integer, String> valueToSymbol : valueToSymbols.entrySet()) {
-                if (valueToSymbol.getKey() <= num) {
-                    result += valueToSymbol.getValue();
-                    num -= valueToSymbol.getKey();
-                    break;
-                }
-            }
-        }
-
-        return result;
-    }
-}
+    public String intToRoman(int num) { return null;}}

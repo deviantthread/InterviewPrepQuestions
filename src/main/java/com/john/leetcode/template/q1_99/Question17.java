@@ -19,26 +19,4 @@ public class Question17 {
         digitsToLetters.put('9', new String[] { "w", "x", "y", "z" });
     }
 
-    public List<String> letterCombinations(String digits) {
-        if (digits == null || digits.length() == 0) {
-            return new ArrayList<>();
-        }
-
-        List<String> ret = new ArrayList<>();
-
-        letterCombinations(digits, ret, 0, "");
-
-        return ret;
-    }
-
-    private void letterCombinations(String digits, List<String> ret, int idx, String str) {
-        if (idx == digits.length()) {
-            ret.add(str);
-            return;
-        }
-
-        for (String letter : digitsToLetters.get(digits.charAt(idx))) {
-            letterCombinations(digits, ret, idx + 1, str + letter);
-        }
-    }
-}
+    public List<String> letterCombinations(String digits) { return null;}}
