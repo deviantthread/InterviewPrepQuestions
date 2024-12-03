@@ -4,6 +4,6 @@ import com.john.datastructures.ListNode;
 
 public class Question160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        return null;
+        return new ListNode();
     }
 }

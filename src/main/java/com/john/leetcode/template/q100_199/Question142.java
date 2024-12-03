@@ -4,6 +4,6 @@ import com.john.datastructures.ListNode;
 
 public class Question142 {
     public ListNode detectCycle(ListNode head) {
-        return null;
+        return new ListNode();
     }
 }
