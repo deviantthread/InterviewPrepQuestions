@@ -1,7 +1,7 @@
 package com.john.leetcode.Nov2022.q200_299;
 
 import com.google.common.collect.Lists;
-import com.john.Nov2022.leetcode.q200_299.Question225.MyStack;
+import com.john.leetcode.Nov2022.q200_299.Question225.MyStack;
 import com.john.utils.ListAssert;
 import org.junit.Assert;
 import org.junit.Test;

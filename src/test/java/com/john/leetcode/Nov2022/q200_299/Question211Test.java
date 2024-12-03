@@ -1,6 +1,6 @@
 package com.john.leetcode.Nov2022.q200_299;
 
-import com.john.Nov2022.leetcode.q200_299.Question211.WordDictionary;
+import com.john.leetcode.Nov2022.q200_299.Question211.WordDictionary;
 import org.junit.Assert;
 import org.junit.Test;
 

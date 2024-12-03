@@ -1,6 +1,6 @@
 package com.john.leetcode.Nov2022.q200_299;
 
-import com.john.Nov2022.leetcode.q200_299.Question208.Trie;
+import com.john.leetcode.Nov2022.q200_299.Question208.Trie;
 import org.junit.Assert;
 import org.junit.Test;
 

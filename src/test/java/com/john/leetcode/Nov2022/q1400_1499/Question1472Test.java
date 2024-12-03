@@ -1,7 +1,7 @@
 package com.john.leetcode.Nov2022.q1400_1499;
 
 import com.google.common.collect.Lists;
-import com.john.Nov2022.leetcode.q1400_1499.Question1472.BrowserHistory;
+import com.john.leetcode.Nov2022.q1400_1499.Question1472.BrowserHistory;
 import com.john.utils.ListAssert;
 import org.junit.Test;
 

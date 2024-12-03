@@ -1,6 +1,6 @@
 package com.john.leetcode.Nov2022.q300_399;
 
-import com.john.Nov2022.leetcode.q300_399.Question303.NumArray;
+import com.john.leetcode.Nov2022.q300_399.Question303.NumArray;
 import com.john.utils.CollectionCreator;
 import org.junit.Assert;
 import org.junit.Test;

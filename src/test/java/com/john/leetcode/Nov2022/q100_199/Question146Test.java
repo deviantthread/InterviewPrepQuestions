@@ -1,6 +1,6 @@
 package com.john.leetcode.Nov2022.q100_199;
 
-import com.john.Nov2022.leetcode.q100_199.Question146.LRUCache;
+import com.john.leetcode.Nov2022.q100_199.Question146.LRUCache;
 import org.junit.Assert;
 import org.junit.Test;
 
