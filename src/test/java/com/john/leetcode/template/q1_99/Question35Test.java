@@ -53,7 +53,7 @@ public class Question35Test {
 
     @Test
     public void testExample6() {
-        int[] nums = { 1,3 };
+        int[] nums = { 1, 3 };
         int target = 2;
         int expected = 1;
 

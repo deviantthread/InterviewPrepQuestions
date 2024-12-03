@@ -1,7 +1,6 @@
 package com.john.leetcode.template.q1_99;
 
 import java.util.LinkedHashMap;
-import java.util.Map.Entry;
 
 public class Question12 {
 
@@ -23,4 +22,7 @@ public class Question12 {
         valueToSymbols.put(1, "I");
     }
 
-    public String intToRoman(int num) { return null;}}
+    public String intToRoman(int num) {
+        return null;
+    }
+}

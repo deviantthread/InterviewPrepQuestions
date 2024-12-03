@@ -8,4 +8,7 @@ public class Question374 {
     // shhh im not here
     private final int pick;
 
-    public int guessNumber(int n) { return 0;}}
+    public int guessNumber(int n) {
+        return 0;
+    }
+}

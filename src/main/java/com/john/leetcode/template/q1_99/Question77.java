@@ -1,8 +1,9 @@
 package com.john.leetcode.template.q1_99;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Question77 {
-    public List<List<Integer>> combine(int n, int k) { return null;}}
+    public List<List<Integer>> combine(int n, int k) {
+        return null;
+    }
+}

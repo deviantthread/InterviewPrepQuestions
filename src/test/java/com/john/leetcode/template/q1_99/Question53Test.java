@@ -22,6 +22,7 @@ public class Question53Test {
         //    Explanation: The subarray [1] has the largest sum 1.
         Assert.assertEquals(expected, classUnderTest.maxSubArray(nums));
     }
+
     @Test
     public void testExample3() {
         int[] nums = CollectionCreator.createArrayInt("[5,4,-1,7,8]");

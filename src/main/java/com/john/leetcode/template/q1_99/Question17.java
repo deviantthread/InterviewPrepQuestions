@@ -1,6 +1,5 @@
 package com.john.leetcode.template.q1_99;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,4 +18,7 @@ public class Question17 {
         digitsToLetters.put('9', new String[] { "w", "x", "y", "z" });
     }
 
-    public List<String> letterCombinations(String digits) { return null;}}
+    public List<String> letterCombinations(String digits) {
+        return null;
+    }
+}

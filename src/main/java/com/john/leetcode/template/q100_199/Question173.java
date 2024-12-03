@@ -1,7 +1,6 @@
 package com.john.leetcode.template.q100_199;
 
 import com.john.datastructures.TreeNode;
-import java.util.Stack;
 
 public class Question173 {
     static class BSTIterator {

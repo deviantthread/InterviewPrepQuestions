@@ -20,6 +20,7 @@ public class Question45Test {
         int expected = 2;
         Assert.assertEquals(expected, classUnderTest.jump(nums));
     }
+
     @Test
     public void testExample3() {
         int[] nums = { 0 };

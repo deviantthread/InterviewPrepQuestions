@@ -27,6 +27,4 @@ public class Question169Test {
         int expected = 2;
         Assert.assertEquals(expected, classUnderTest.majorityElement(nums));
     }
-
-
 }
