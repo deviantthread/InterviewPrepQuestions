@@ -1,0 +1,13 @@
+package com.john.leetcode.template.q400_499;
+
+import org.junit.Assume;
+import org.junit.Test;
+
+public class Question441Test {
+    private final Question441 classUnderTest = new Question441();
+
+    @Test
+    public void testUnattempted() {
+        Assume.assumeTrue("unattempted", false);
+    }
+}
