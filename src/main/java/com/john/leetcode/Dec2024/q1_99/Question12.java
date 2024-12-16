@@ -23,6 +23,19 @@ public class Question12 {
     }
 
     public String intToRoman(int num) {
-        return null;
+
+        StringBuilder result = new StringBuilder();
+
+        while (num > 0) {
+            for (Integer value : valueToSymbols.keySet()) {
+                if (value <= num) {
+                    result.append(valueToSymbols.get(value));
+                    num -= value;
+                    break;
+                }
+            }
+        }
+
+        return result.toString();
     }
 }

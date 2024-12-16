@@ -4,12 +4,10 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class Question20Test {
-
     private Question20 classUnderTest = new Question20();
 
     @Test
     public void testExample1() {
-
         String input = "()";
         boolean expected = true;
 
@@ -18,7 +16,6 @@ public class Question20Test {
 
     @Test
     public void testExample2() {
-
         String input = "()[]{}";
         boolean expected = true;
 
@@ -27,7 +24,6 @@ public class Question20Test {
 
     @Test
     public void testExample3() {
-
         String input = "(]";
         boolean expected = false;
 

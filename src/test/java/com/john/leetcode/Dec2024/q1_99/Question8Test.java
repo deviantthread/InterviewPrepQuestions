@@ -72,4 +72,12 @@ public class Question8Test {
 
         Assert.assertEquals(expected, classUnderTest.myAtoi(input));
     }
+
+    @Test
+    public void testExample6() {
+        String input = "-6147483648";
+        int expected = Integer.MIN_VALUE;
+
+        Assert.assertEquals(expected, classUnderTest.myAtoi(input));
+    }
 }

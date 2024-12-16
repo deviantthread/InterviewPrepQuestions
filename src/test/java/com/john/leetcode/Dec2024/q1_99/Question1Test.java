@@ -1,5 +1,6 @@
 package com.john.leetcode.Dec2024.q1_99;
 
+import com.john.utils.CollectionCreator;
 import java.util.stream.IntStream;
 import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Assert;
@@ -7,7 +8,32 @@ import org.junit.Test;
 
 public class Question1Test {
 
-    Question1 question1 = new Question1();
+    Question1 classUnderTest = new Question1();
+
+    @Test
+    public void testExample1() {
+        int[] nums = CollectionCreator.createArrayInt("[2,7,11,15]");
+        int target = 9;
+        int[] expected = CollectionCreator.createArrayInt("[0,1]");
+        //    Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+        Assert.assertArrayEquals(expected, classUnderTest.twoSum(nums, target));
+    }
+
+    @Test
+    public void testExample2() {
+        int[] nums = CollectionCreator.createArrayInt("[3,2,4]");
+        int target = 6;
+        int[] expected = CollectionCreator.createArrayInt("[1,2]");
+        Assert.assertArrayEquals(expected, classUnderTest.twoSum(nums, target));
+    }
+
+    @Test
+    public void testExample3() {
+        int[] nums = CollectionCreator.createArrayInt("[3,3]");
+        int target = 6;
+        int[] expected = CollectionCreator.createArrayInt("[0,1]");
+        Assert.assertArrayEquals(expected, classUnderTest.twoSum(nums, target));
+    }
 
     @Test
     public void testTwoSumBasic() {
@@ -35,7 +61,7 @@ public class Question1Test {
     }
 
     private void testTwoSumBase(int[] nums, int target) {
-        int[] hashResult = question1.twoSum(nums, target);
+        int[] hashResult = classUnderTest.twoSum(nums, target);
 
         verifyCorrect(nums, hashResult, target);
     }

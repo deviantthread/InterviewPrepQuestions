@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class Question2Test {
-    private Question2 question2 = new Question2();
+    private Question2 classUnderTest = new Question2();
 
     @Test
     public void testSameLength() {
@@ -36,7 +36,7 @@ public class Question2Test {
         ListNode aList = createList(a);
         ListNode bList = createList(b);
 
-        ListNode result = question2.addTwoNumbers(aList, bList);
+        ListNode result = classUnderTest.addTwoNumbers(aList, bList);
         int value = reverseSum(result);
 
         Assert.assertEquals(a + b, value);

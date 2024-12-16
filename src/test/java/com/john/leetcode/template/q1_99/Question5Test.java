@@ -1,5 +1,9 @@
 package com.john.leetcode.template.q1_99;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.AnyOf.anyOf;
+import static org.hamcrest.core.Is.is;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -10,10 +14,8 @@ public class Question5Test {
     @Test
     public void testExample1() {
         String input = "babad";
-        String expected = "aba";
-        //        Explanation: "bab" is also a valid answer.
 
-        Assert.assertEquals(expected, classUnderTest.longestPalindrome(input));
+        assertThat(classUnderTest.longestPalindrome(input), anyOf(is("aba"), is("bab")));
     }
 
     @Test

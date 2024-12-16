@@ -28,4 +28,15 @@ public class Question26Test {
         Assert.assertEquals(expectedResult, classUnderTest.removeDuplicates(nums));
         ArrayAssert.assertFirstKElementsEqual(nums, expectedArray, expectedResult);
     }
+
+    @Test
+    public void testExample3() {
+        int[] nums = { 1 };
+        int expectedResult = 1;
+        int[] expectedArray = { 1 };
+        //    Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+        //    It does not matter what you leave beyond the returned k (hence they are underscores).
+        Assert.assertEquals(expectedResult, classUnderTest.removeDuplicates(nums));
+        ArrayAssert.assertFirstKElementsEqual(nums, expectedArray, expectedResult);
+    }
 }

@@ -35,4 +35,49 @@ public class Question10Test {
 
         Assert.assertEquals(expected, classUnderTest.isMatch(s, p));
     }
+
+    @Test
+    public void testExample4() {
+        String s = "aab";
+        String p = "c*a*b";
+        boolean expected = true;
+
+        Assert.assertEquals(expected, classUnderTest.isMatch(s, p));
+    }
+
+    @Test
+    public void testExample5() {
+        String s = "aaa";
+        String p = "ab*a*c*a";
+        boolean expected = true;
+
+        Assert.assertEquals(expected, classUnderTest.isMatch(s, p));
+    }
+
+    @Test
+    public void testExample6() {
+        String s = "aaca";
+        String p = "ab*a*c*a";
+        boolean expected = true;
+
+        Assert.assertEquals(expected, classUnderTest.isMatch(s, p));
+    }
+
+    @Test
+    public void testExample7() {
+        String s = "a";
+        String p = "ab*";
+        boolean expected = true;
+
+        Assert.assertEquals(expected, classUnderTest.isMatch(s, p));
+    }
+
+    @Test(timeout = 1_000)
+    public void testExample8() {
+        String s = "aaaaaaaaaaaaaaaaaaab";
+        String p = "a*a*a*a*a*a*a*a*a*a*";
+        boolean expected = false;
+
+        Assert.assertEquals(expected, classUnderTest.isMatch(s, p));
+    }
 }
